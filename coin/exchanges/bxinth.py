@@ -25,7 +25,9 @@ class Bxinth(Exchange):
         {'isocode': 'XXBCHZTHB', 'pair': 'XXBCHZTHB', 'name': 'BCH to THB', 'volumelabel': 'BCH', 'currency': CURRENCY['thb'], 'pairing_id': 27, 'primary_currency': 'THB', 'secondary_currency': 'BCH'},
         {'isocode': 'XXEVXZTHB', 'pair': 'XXEVXZTHB', 'name': 'EVX to THB', 'volumelabel': 'EVX', 'currency': CURRENCY['thb'], 'pairing_id': 28, 'primary_currency': 'THB', 'secondary_currency': 'EVX'},
         {'isocode': 'XXXZCZTHB', 'pair': 'XXXZCZTHB', 'name': 'XZC to THB', 'volumelabel': 'XZC', 'currency': CURRENCY['thb'], 'pairing_id': 29, 'primary_currency': 'THB', 'secondary_currency': 'XZC'},
-        {'isocode': 'XXLTCZTHB', 'pair': 'XXLTCZTHB', 'name': 'LTC to THB', 'volumelabel': 'LTC', 'currency': CURRENCY['thb'], 'pairing_id': 30, 'primary_currency': 'THB', 'secondary_currency': 'LTC'}
+        {'isocode': 'XXLTCZTHB', 'pair': 'XXLTCZTHB', 'name': 'LTC to THB', 'volumelabel': 'LTC', 'currency': CURRENCY['thb'], 'pairing_id': 30, 'primary_currency': 'THB', 'secondary_currency': 'LTC'},
+        {'isocode': 'XXPOWZTHB', 'pair': 'XXPOWZTHB', 'name': 'POW to THB', 'volumelabel': 'POW', 'currency': CURRENCY['thb'], 'pairing_id': 31, 'primary_currency': 'THB', 'secondary_currency': 'POW'},
+        {'isocode': 'XXZMNZTHB', 'pair': 'XXZMNZTHB', 'name': 'ZMINE to THB', 'volumelabel': 'ZMN', 'currency': CURRENCY['thb'], 'pairing_id': 32, 'primary_currency': 'THB', 'secondary_currency': 'ZMN'}
     ]
 
     @classmethod
@@ -72,10 +74,10 @@ class Bxinth(Exchange):
             database.append(value)
 
         selected_asset = self.asset_pair
-
         query_result = [item for item in database
                         if item['primary_currency'] == selected_asset['primary_currency'] and
                         item['secondary_currency'] == selected_asset['secondary_currency']][0]
+        
 
         current = float(query_result['last_price'])
 
